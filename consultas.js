@@ -28,9 +28,9 @@ const consultar = async () => {
     return resp;
 }
 
-const actualizar = async (cancion) => {
+const actualizar = async (id, cancion) => {
     try {
-        const { id, titulo, artista, tono } = cancion;
+        const { titulo, artista, tono } = cancion;
         const config = {
             text: "UPDATE canciones SET titulo=$2, artista=$3, tono=$4 WHERE id=$1 RETURNING *",
             values: [id, titulo, artista, tono]
